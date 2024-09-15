@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UtilityBills_Siddhartha.MainPage">
+
+    <StackLayout>
+        <Frame>
+            <Label Text="Utility Bill calculator" HorizontalTextAlignment="Center" TextColor="Black" FontSize="20"/>
+        </Frame>
+        <!-- Province Entry -->
+        <Label Text="Choose Your Province"></Label>
+        <Picker x:Name="provincePicker" Title="Select Your Province">
+            <Picker.Items>
+                <x:String>ON</x:String>
+                <x:String>BC</x:String>
+                <x:String>NL</x:String>
+                <x:String>AB</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="Daytime Usage (kwh)"></Label>
+        <Entry x:Name="daytimeUsage" Keyboard="Numeric" Placeholder="Enter the daytime usage" />
+
+        <Label Text="Evening Usage (kwh)"></Label>
+        <Entry x:Name="eveningUsage" Keyboard="Numeric" Placeholder="Enter the evening usage" />
+        
+        <Label Text="Did you use a renewable energy source?" VerticalOptions="Center" />
+        <Switch x:Name="renewableSwitch" IsToggled="False" />
+
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <!-- Calculate Button -->
+            <Button Text="Calculate" Clicked="OnCalculateClicked" />
+
+            <!-- Reset Button -->
+            <Button Text="Reset" Clicked="OnResetClicked" />
+        </StackLayout>
+        <StackLayout>
+            <Label HorizontalOptions="Center" FontSize="Large" TextColor="Black">Charges Breakdown</Label>
+
+            <Label x:Name="dayTimeCharges" TextColor="Black"></Label>
+
+            <Label x:Name="eveningCharges" TextColor="Black"></Label>
+
+            <Label x:Name="total" TextColor="Black"></Label>
+
+            <Label x:Name="salesTax" TextColor="Black"></Label>
+
+            <Label x:Name="rebate" TextColor="Black"></Label>
+
+            <Label x:Name="resultLabel"  HorizontalOptions="Center"  TextColor="Black" BackgroundColor="LightPink" FontSize="Medium"></Label>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
+ 
